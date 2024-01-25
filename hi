@@ -1,0 +1,53 @@
+$sudo adduser jorge
+
+$sudo usermod -a -G <group_name> <username>
+$sudo usermod -a -G root user1
+
+
+Add user
+useradd -m username
+
+
+$chsh -s /bin/bash username
+# chsh command is used to change the login shell for a user.
+
+
+Set user group to sudo.
+usermod -a -G sudo username
+# -a option to add and ‘-G sudo’ means to add the user to the sudo group
+
+Create new group
+$groupadd -g group-ID group-name
+where group-ID is the numeric identifier of the group, and group-name is the name of the group.
+
+
+To create a new group, use the groupadd command
+$getent group group-name
+where group-name is the name of the group.
+
+
+Change the group ID
+$sudo groupmod -g 1011 botnet
+
+
+Rename a group
+$sudo groupmod -n test demo1
+
+
+Add and remove users from a group
+Suppose you have existing users named user1 and user2, and you want to add them to the demo group. Use the usermod command with the --append --groups options (-a and -G for short):
+
+$sudo usermod --append --groups demo user1
+$sudo usermod -aG demo user2
+
+
+To remove a specific user from a group
+$sudo gpasswd --delete user1 demo
+
+
+Use the id command to confirm your changes:
+$id user1
+
+
+Delete a group
+$sudo groupdel demo
