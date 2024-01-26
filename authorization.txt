@@ -1,0 +1,24 @@
+let's run dirsearch
+we have a few amount of directories, let's check each of them
+method not allowed on /auth. Let's change it by using burpsuite
+we got username and password liens and now we know that those 2 are json format
+let's get those username and password from another directory
+username: admin password:admin
+we got username/password but do not have jwt token
+let's try to auth with our username/password
+
+Content-Length: 47
+Content-type:application/json
+
+{
+	"username":"admin",
+	"password":"admin"
+}
+
+we got our access token
+now let's write in secrets
+
+Content-type" application/json
+Authorization: JWT
+
+[token]
