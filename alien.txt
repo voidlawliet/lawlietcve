@@ -1,0 +1,5 @@
+When we first access the challenge we will see the source code. 
+We can now send the flag.php value as POST start parameter through "guessing". 
+curl is a cmd line tool for transferring data with URL 
+And we get the flag by using curl 'ip/?start=' --data 'start=flag.php'
+--data gives us info from the request and inside the start parameter, we can put name of flag 

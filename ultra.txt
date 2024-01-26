@@ -1,0 +1,10 @@
+first we try to send a request for (example) : discord.com 
+but we get an internal server error
+with a simple payload, for example 'file:///etc/passwd' we get a new prompt.
+on the webpage we see a "/home/ctf" 
+now, we can use BurpSuite to send payloads and get a response.
+we know that the server runs on python.
+by accessing 'file:///home/ctf/app.py' we see ['Host'] == "company.tld"
+so if we modify the host inside the repeater, we receive a flag 
+
+vulnerability: Local File Inclusion (LFI) 

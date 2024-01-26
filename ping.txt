@@ -1,0 +1,6 @@
+when we first see the prompt, "insert ip" we can try putting a random ip address to check if it does anything.
+it gives us an internal server error so we try using normal characters with the ip to check if it acts as a terminal "8.8.8.8;ls -l"
+now we see something named "flag" 
+with this information we can put "8.8.8.8;cat flag" and we get the flag.
+
+vulnerability: remote code execution (they do not have a filter for using letters instead of numbers) 

